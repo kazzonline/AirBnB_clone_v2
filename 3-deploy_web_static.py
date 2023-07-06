@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This Creates and distributes an archive to web servers"""
+"""Create and distributes an archive to web servers"""
 import os.path
 import time
 from fabric.api import local
@@ -9,7 +9,7 @@ env.hosts = ['52.73.253.246', '100.26.243.162']
 
 
 def do_pack():
-    """This Generates a tgz archive from web_static folder"""
+    """Generate an tgz archive from web_static folder"""
     try:
         local("mkdir -p versions")
         local("tar -cvzf versions/web_static_{}.tgz web_static/".
@@ -21,7 +21,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """This distributes an archive to web servers"""
+    """Distribute an archive to web servers"""
     if (os.path.isfile(archive_path) is False):
         return False
 

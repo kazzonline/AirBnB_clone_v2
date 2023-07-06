@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A function that deploys """
+""" Function that deploys """
 from fabric.api import *
 
 
